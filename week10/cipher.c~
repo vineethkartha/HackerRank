@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+  int N,K;
+  int i,j;
+  char str[2000000];
+  char ans[1000000];
+  scanf("%d %d",&N,&K);
+  scanf(" %s",str);
+  for(i=0;i<N;i++)
+    {
+      ans[i]='0';
+      if(i<K)
+	{
+	  ans[i]=(ans[i]-'0')^(str[i]-'0');
+	  for(j=i-1;j>=0;j--)
+	    {
+	      ans[i]=(ans[i]-'0')^(ans[j]-'0');
+	    }
+	}
+      else
+	{
+	  ans[i]=(ans[i]-'0')^(str[i]-'0');
+	  for(j=i-1;j>=i-K+1;j--)
+	    {
+	      ans[i]=(ans[i]-'0')^(ans[j]-'0');
+	    }
+	}
+    }
+  ans[i]='\0';
+  printf(" %s\n",ans);
+  return 0;
+}

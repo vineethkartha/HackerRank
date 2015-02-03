@@ -1,0 +1,14 @@
+NM=[[] for i in range(2)]
+num=[[] for i in range(100000000)]
+T=input()
+for i in range(0,T):
+    NM[i]=[int(n) for n in raw_input().split()]
+    num[i]=[int(n) for n in raw_input().split()]
+
+for i in range(0,T):
+    maxsum=num[i][0]
+    curmax=num[i][0]
+    for j in range(1,NM[0]):
+        curmax=num[i][j]if (num[i][j]>(curmax+num[i][j])) else (curmax+num[i][j])
+        maxsum=(maxsum if maxsum>curmax else curmax)
+    print maxsum
