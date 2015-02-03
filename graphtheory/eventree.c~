@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<stdlib.h>
+typedef struct node
+{
+  int value;
+  struct node *child[100];
+}node;
+int main()
+{
+  int N,M;
+  node *root;
+  int i,j;
+  int u,v;
+  scanf("%d %d",&N,&M);
+  for(i=0;i<M;i++)
+    {
+      root=malloc(sizeof(node));
+    }
+  return 0;
+}
